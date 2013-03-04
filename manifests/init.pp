@@ -28,7 +28,7 @@ class riak {
   }
 
   file { '/etc/launchd.conf':
-    content => 'limit maxfiles 2048 unlimited'
+    content => 'limit maxfiles 2048 unlimited',
     group   => 'wheel',
     owner   => 'root',
     notify  => Service['dev.riak']
