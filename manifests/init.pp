@@ -27,6 +27,13 @@ class riak {
   #    notify  => Service['dev.riak']
   }
 
+  file { '/etc/launchd.conf':
+    content => 'limit maxfiles 2048 unlimited'
+    group   => 'wheel',
+    owner   => 'root',
+    notify  => Service['dev.riak']
+  }
+
   homebrew::formula { 'riak':
     before => Package['boxen/brews/riak']
   }
