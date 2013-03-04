@@ -31,7 +31,7 @@ class riak {
     content => 'limit maxfiles 2048 unlimited',
     group   => 'wheel',
     owner   => 'root',
-    notify  => Service['dev.riak']
+    ensure  => 'present'
   }
 
   homebrew::formula { 'riak':
